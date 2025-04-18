@@ -48,7 +48,7 @@ app.post("/register", (req, res) => {
     (err, result) => {
       if (err) {
         console.error(err);
-        return res.status(500).json({ success: false, message: "Database error" });
+        return res.status(500).json({ success: false, message: "Invalid Values" });
       }
       res.status(200).json({ success: true, message: "Registration successful" });
     }

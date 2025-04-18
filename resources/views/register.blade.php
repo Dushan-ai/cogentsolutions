@@ -612,7 +612,7 @@
               <button type="submit" class="submit-button btn btn-primary">Register</button>
             </form>
             <!-- Alert Section -->
-            <div id="alert-message" class="alert d-none" role="alert"></div>
+            <div id="alert-message" class="alert d-none" role="alert" style="text-align: center;"></div>
           </div>
         </div>
       </div>
@@ -637,25 +637,34 @@
   document.getElementById("registration-form").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const formData = new FormData(this);
+    const form = this;
+    const formData = new FormData(form);
+
     fetch("http://127.0.0.1:3000/register", {
       method: "POST",
       body: new URLSearchParams(formData)
     })
     .then(response => response.json())
     .then(data => {
-      const alertBox = document.getElementById("alert-message");
-      alertBox.classList.remove("d-none");
-      alertBox.classList.add("alert-success");
-      alertBox.innerText = data.message;
-      this.reset();
+      showAlert("alert-success", data.message);
+      form.reset();
     })
     .catch(error => {
-      const alertBox = document.getElementById("alert-message");
-      alertBox.classList.remove("d-none");
-      alertBox.classList.add("alert-danger");
-      alertBox.innerText = "Registration failed!";
+      showAlert("alert-danger", "Registration failed!");
     });
+
+    function showAlert(type, message) {
+      const alertBox = document.getElementById("alert-message");
+      alertBox.classList.remove("d-none", "alert-success", "alert-danger");
+      alertBox.classList.add(type);
+      alertBox.innerText = message;
+
+      // Show alert for 5 seconds, then reload page
+      setTimeout(() => {
+        alertBox.classList.add("d-none");
+        location.reload();
+      }, 5000);
+    }
   });
 </script>
 
