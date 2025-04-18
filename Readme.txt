@@ -1,3 +1,7 @@
+//How to use
+# I have created this using Laravel. So you can review this site by running a local server in PhpMyAdmin.
+# Where cogentsolutions.sql is the database. also use PhpMyAdmin server can import this databased file.
+
 //Technologies Used
 
 1. Node.js & Express.js
