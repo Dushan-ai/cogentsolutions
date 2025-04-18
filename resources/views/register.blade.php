@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -560,62 +560,64 @@
     </section>
 
 
-  <!-- Registration Section -->
-  <section>
-    <div class="registration-section" id="register">
-        <div class="container">
-            <div class="row d-flex align-items-center">
-                <div class="col-md-5 col-12 text-left">
-                    <h2 class="display-4">Register Now</h2>
-                    <p class="h4">Join us for an unforgettable <br> experience!</p>
-                </div>
-                <div class="col-md-7 col-12">
-                    <div class="registration-form-container">
-                        <div id="loading" class="loading-spinner" style="display: none;">
-                            <img src="" alt="Loading..." class="loader-image" width="200">
-                        </div>
-                        <form id="registration-form" class="registration-form">
-                            <div class="form-group">
-                                <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
-                                <span id="first_name-error" class="error-message"></span>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
-                                <span id="last_name-error" class="error-message"></span>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" id="job_title" name="job_title" placeholder="Job Title" required>
-                                <span id="job_title-error" class="error-message"></span>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" id="company" name="company" placeholder="Company" required>
-                                <span id="company-error" class="error-message"></span>
-                            </div>
-                            <div class="form-group">
-                                <input type="tel" id="phone" name="phone" placeholder="Mobile Number" required>
-                                <span id="phone-error" class="error-message"></span>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" id="email" name="email" placeholder="Email Address" required>
-                                <span id="email-error" class="error-message"></span>
-                            </div>
-                            <div class="form-group">
-                                <input type="url" id="company_website_URL" name="company_website_URL" placeholder="Company Website URL" required>
-                            </div>
-                            <div class="form-group checkbox-group" >
-                                <input type="checkbox" id="privacy_policy" name="privacy_policy" required style="width: 16px; height: 16px; margin-right: 10px;">
-                                <label for="privacy_policy" style="font-size: 14px; color: #ddd;">
-                                    By filling out the registration form to attend our event, you agree and consent <br> to <a href="https://cogentsolutions.ae/privacy-policy" target="_blank" style="color: rgb(173, 105, 187)">Cogent Solutions Privacy Policy</a>.
-                                </label>
-                                <span id="privacy_policy-error" class="error-message"></span>
-                            </div>
-                            <button type="submit" class="submit-button btn btn-primary">Register</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+<!-- Registration Section -->
+<section>
+  <div class="registration-section" id="register">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-md-5 col-12 text-left">
+          <h2 class="display-4">Register Now</h2>
+          <p class="h4">Join us for an unforgettable <br> experience!</p>
         </div>
+        <div class="col-md-7 col-12">
+          <div class="registration-form-container">
+            <div id="loading" class="loading-spinner" style="display: none;">
+              <img src="" alt="Loading..." class="loader-image" width="200">
+            </div>
+            <form id="registration-form" class="registration-form" method="POST">
+              <div class="form-group">
+                <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+                <span id="first_name-error" class="error-message"></span>
+              </div>
+              <div class="form-group">
+                <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+                <span id="last_name-error" class="error-message"></span>
+              </div>
+              <div class="form-group">
+                <input type="text" id="job_title" name="job_title" placeholder="Job Title" required>
+                <span id="job_title-error" class="error-message"></span>
+              </div>
+              <div class="form-group">
+                <input type="text" id="company" name="company" placeholder="Company" required>
+                <span id="company-error" class="error-message"></span>
+              </div>
+              <div class="form-group">
+                <input type="tel" id="phone" name="phone" placeholder="Mobile Number" required>
+                <span id="phone-error" class="error-message"></span>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Email Address" required>
+                <span id="email-error" class="error-message"></span>
+              </div>
+              <div class="form-group">
+                <input type="url" id="company_website_URL" name="company_website_URL" placeholder="Company Website URL" required>
+              </div>
+              <div class="form-group checkbox-group">
+                <input type="checkbox" id="privacy_policy" name="privacy_policy" required style="width: 16px; height: 16px; margin-right: 10px;">
+                <label for="privacy_policy" style="font-size: 14px; color: #ddd;">
+                  By filling out the registration form to attend our event, you agree and consent to <br> the <a href="https://cogentsolutions.ae/privacy-policy" target="_blank" style="color: rgb(173, 105, 187)">Cogent Solutions Privacy Policy</a>.
+                </label>
+                <span id="privacy_policy-error" class="error-message"></span>
+              </div>
+              <button type="submit" class="submit-button btn btn-primary">Register</button>
+            </form>
+            <!-- Alert Section -->
+            <div id="alert-message" class="alert d-none" role="alert"></div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
   <!-- Responsive Iframe -->
@@ -630,5 +632,33 @@
   <iframe id="contentIframe" src="https://cogentsolutions.ae/events/upcoming-physical-events/reimagine-banking-finastra/"
     style="width: 0px; height: 0px; border: none; position: absolute; visibility: hidden;"></iframe>
     <script>AOS.init();</script>
+
+    <script>
+  document.getElementById("registration-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    fetch("http://127.0.0.1:3000/register", {
+      method: "POST",
+      body: new URLSearchParams(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+      const alertBox = document.getElementById("alert-message");
+      alertBox.classList.remove("d-none");
+      alertBox.classList.add("alert-success");
+      alertBox.innerText = data.message;
+      this.reset();
+    })
+    .catch(error => {
+      const alertBox = document.getElementById("alert-message");
+      alertBox.classList.remove("d-none");
+      alertBox.classList.add("alert-danger");
+      alertBox.innerText = "Registration failed!";
+    });
+  });
+</script>
+
+
 </body>
 </html>
